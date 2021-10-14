@@ -8,13 +8,13 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.view.addGestureRecognizer(tapRecognizer)
     }
@@ -47,7 +47,6 @@ class LoginViewController: UIViewController {
                 performSegue(withIdentifier: "toMainView", sender: nil)
             }
         }
-   
     }
     
     //MARK: - Alert
@@ -65,5 +64,4 @@ class LoginViewController: UIViewController {
     @IBAction func passwordTextFieldEditing(_ sender: UITextField) {
         passwordTextField.textColor = UIColor.label
     }
-    
 }
