@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		668721E22715CE6C00AC0630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721E12715CE6C00AC0630 /* AppDelegate.swift */; };
 		668721E42715CE6C00AC0630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721E32715CE6C00AC0630 /* SceneDelegate.swift */; };
-		668721E62715CE6C00AC0630 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721E52715CE6C00AC0630 /* ViewController.swift */; };
 		668721E92715CE6C00AC0630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668721E72715CE6C00AC0630 /* Main.storyboard */; };
 		668721EB2715CE6C00AC0630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 668721EA2715CE6C00AC0630 /* Assets.xcassets */; };
 		668721EE2715CE6C00AC0630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668721EC2715CE6C00AC0630 /* LaunchScreen.storyboard */; };
+		668721F62715D8B000AC0630 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721F52715D8B000AC0630 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		668721DE2715CE6C00AC0630 /* VKclient-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VKclient-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		668721E12715CE6C00AC0630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		668721E32715CE6C00AC0630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		668721E52715CE6C00AC0630 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		668721E82715CE6C00AC0630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		668721EA2715CE6C00AC0630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		668721ED2715CE6C00AC0630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		668721EF2715CE6C00AC0630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		668721F52715D8B000AC0630 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			children = (
 				668721E12715CE6C00AC0630 /* AppDelegate.swift */,
 				668721E32715CE6C00AC0630 /* SceneDelegate.swift */,
-				668721E52715CE6C00AC0630 /* ViewController.swift */,
+				668721F52715D8B000AC0630 /* LoginViewController.swift */,
 				668721E72715CE6C00AC0630 /* Main.storyboard */,
 				668721EA2715CE6C00AC0630 /* Assets.xcassets */,
 				668721EC2715CE6C00AC0630 /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				668721E62715CE6C00AC0630 /* ViewController.swift in Sources */,
+				668721F62715D8B000AC0630 /* LoginViewController.swift in Sources */,
 				668721E22715CE6C00AC0630 /* AppDelegate.swift in Sources */,
 				668721E42715CE6C00AC0630 /* SceneDelegate.swift in Sources */,
 			);
@@ -292,6 +292,7 @@
 				DEVELOPMENT_TEAM = C6LQWWG8ZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "VKclient-1/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "VK client";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -320,6 +321,7 @@
 				DEVELOPMENT_TEAM = C6LQWWG8ZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "VKclient-1/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "VK client";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
