@@ -28,25 +28,27 @@ class LoginViewController: UIViewController {
     
     @IBAction func pressButton(_ sender: UIButton) {
         
-        if let userName = loginTextField.text,
-           let userPassword = passwordTextField.text {
-            
-            if userName.isEmpty || userPassword.isEmpty {
-                checkUserAlert(message: "Введите данные для авторизации!")
-                loginTextField.textColor = UIColor.red
-                passwordTextField.textColor = UIColor.red
-                
-            } else if
-                userName != "Admin" || userPassword != "Admin" {
-                checkUserAlert(message: "Неверное имя пользователя или пароль!")
-                loginTextField.textColor = UIColor.red
-                passwordTextField.textColor = UIColor.red
-            }
-            
-            else if userName == "Admin" && userPassword == "Admin" {
-                performSegue(withIdentifier: "toMainView", sender: nil)
-            }
-        }
+        performSegue(withIdentifier: "toMainView", sender: nil)// надо удалить!
+        
+//        if let userName = loginTextField.text,
+//           let userPassword = passwordTextField.text {
+//
+//            if userName.isEmpty || userPassword.isEmpty {
+//                checkUserAlert(message: "Введите данные для авторизации!")
+//                loginTextField.textColor = UIColor.red
+//                passwordTextField.textColor = UIColor.red
+//
+//            } else if
+//                userName != "Admin" || userPassword != "Admin" {
+//                checkUserAlert(message: "Неверное имя пользователя или пароль!")
+//                loginTextField.textColor = UIColor.red
+//                passwordTextField.textColor = UIColor.red
+//            }
+//
+//            else if userName == "Admin" && userPassword == "Admin" {
+//                performSegue(withIdentifier: "toMainView", sender: nil)
+//            }
+//        }
     }
     
     //MARK: - Alert
