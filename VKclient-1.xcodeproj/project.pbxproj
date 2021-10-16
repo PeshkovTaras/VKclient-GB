@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661CB2B7271B093E00A5ED05 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CB2B6271B093E00A5ED05 /* Friend.swift */; };
+		661CB2B9271B095600A5ED05 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CB2B8271B095600A5ED05 /* Group.swift */; };
+		661CB2BD271B0B5C00A5ED05 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CB2BB271B0B5C00A5ED05 /* CustomTableViewCell.swift */; };
+		661CB2BE271B0B5C00A5ED05 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 661CB2BC271B0B5C00A5ED05 /* CustomTableViewCell.xib */; };
 		668721E22715CE6C00AC0630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721E12715CE6C00AC0630 /* AppDelegate.swift */; };
 		668721E42715CE6C00AC0630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721E32715CE6C00AC0630 /* SceneDelegate.swift */; };
 		668721E92715CE6C00AC0630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668721E72715CE6C00AC0630 /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		661CB2B6271B093E00A5ED05 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		661CB2B8271B095600A5ED05 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		661CB2BB271B0B5C00A5ED05 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		661CB2BC271B0B5C00A5ED05 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		668721DE2715CE6C00AC0630 /* VKclient-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VKclient-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		668721E12715CE6C00AC0630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		668721E32715CE6C00AC0630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		661CB2B5271B092200A5ED05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				661CB2B6271B093E00A5ED05 /* Friend.swift */,
+				661CB2B8271B095600A5ED05 /* Group.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		661CB2BA271B0AF300A5ED05 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				661CB2BB271B0B5C00A5ED05 /* CustomTableViewCell.swift */,
+				661CB2BC271B0B5C00A5ED05 /* CustomTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		668721D52715CE6C00AC0630 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +82,8 @@
 		668721E02715CE6C00AC0630 /* VKclient-1 */ = {
 			isa = PBXGroup;
 			children = (
+				661CB2BA271B0AF300A5ED05 /* cells */,
+				661CB2B5271B092200A5ED05 /* Model */,
 				668721E12715CE6C00AC0630 /* AppDelegate.swift */,
 				668721E32715CE6C00AC0630 /* SceneDelegate.swift */,
 				668721F52715D8B000AC0630 /* LoginViewController.swift */,
@@ -127,6 +155,7 @@
 			files = (
 				668721EE2715CE6C00AC0630 /* LaunchScreen.storyboard in Resources */,
 				668721EB2715CE6C00AC0630 /* Assets.xcassets in Resources */,
+				661CB2BE271B0B5C00A5ED05 /* CustomTableViewCell.xib in Resources */,
 				668721E92715CE6C00AC0630 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				661CB2BD271B0B5C00A5ED05 /* CustomTableViewCell.swift in Sources */,
 				668721F62715D8B000AC0630 /* LoginViewController.swift in Sources */,
 				668721E22715CE6C00AC0630 /* AppDelegate.swift in Sources */,
 				668721E42715CE6C00AC0630 /* SceneDelegate.swift in Sources */,
+				661CB2B9271B095600A5ED05 /* Group.swift in Sources */,
+				661CB2B7271B093E00A5ED05 /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
