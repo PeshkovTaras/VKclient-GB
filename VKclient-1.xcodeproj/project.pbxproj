@@ -19,6 +19,7 @@
 		668721EE2715CE6C00AC0630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668721EC2715CE6C00AC0630 /* LaunchScreen.storyboard */; };
 		668721F62715D8B000AC0630 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721F52715D8B000AC0630 /* LoginViewController.swift */; };
 		66E45C03271C366B00761762 /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E45C02271C366B00761762 /* MyGroupsViewController.swift */; };
+		66E45C05271C49AC00761762 /* AllGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E45C04271C49AC00761762 /* AllGroupsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		668721EF2715CE6C00AC0630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		668721F52715D8B000AC0630 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		66E45C02271C366B00761762 /* MyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
+		66E45C04271C49AC00761762 /* AllGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		661CB2BA271B0AF300A5ED05 /* cells */ = {
+		661CB2BA271B0AF300A5ED05 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				661CB2BB271B0B5C00A5ED05 /* CustomTableViewCell.swift */,
 				661CB2BC271B0B5C00A5ED05 /* CustomTableViewCell.xib */,
 			);
-			path = cells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		661CB2BF271B107400A5ED05 /* Controllers */ = {
@@ -73,6 +75,7 @@
 				668721F52715D8B000AC0630 /* LoginViewController.swift */,
 				661CB2C0271B10AE00A5ED05 /* FriendsViewController.swift */,
 				66E45C02271C366B00761762 /* MyGroupsViewController.swift */,
+				66E45C04271C49AC00761762 /* AllGroupsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,7 +101,7 @@
 			children = (
 				661CB2B5271B092200A5ED05 /* Model */,
 				661CB2BF271B107400A5ED05 /* Controllers */,
-				661CB2BA271B0AF300A5ED05 /* cells */,
+				661CB2BA271B0AF300A5ED05 /* Cells */,
 				668721E12715CE6C00AC0630 /* AppDelegate.swift */,
 				668721E32715CE6C00AC0630 /* SceneDelegate.swift */,
 				668721E72715CE6C00AC0630 /* Main.storyboard */,
@@ -185,6 +188,7 @@
 				668721F62715D8B000AC0630 /* LoginViewController.swift in Sources */,
 				668721E22715CE6C00AC0630 /* AppDelegate.swift in Sources */,
 				668721E42715CE6C00AC0630 /* SceneDelegate.swift in Sources */,
+				66E45C05271C49AC00761762 /* AllGroupsViewController.swift in Sources */,
 				66E45C03271C366B00761762 /* MyGroupsViewController.swift in Sources */,
 				661CB2C1271B10AE00A5ED05 /* FriendsViewController.swift in Sources */,
 				661CB2B9271B095600A5ED05 /* Group.swift in Sources */,

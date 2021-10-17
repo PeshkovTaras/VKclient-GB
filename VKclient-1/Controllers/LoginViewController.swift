@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func pressButton(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "toMainView", sender: nil)// надо удалить!
+        performSegue(withIdentifier: "toMainView", sender: nil) // надо удалить!
         
 //        if let userName = loginTextField.text,
 //           let userPassword = passwordTextField.text {

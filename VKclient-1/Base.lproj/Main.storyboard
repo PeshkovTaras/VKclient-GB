@@ -142,7 +142,14 @@
                             <constraint firstItem="Lvt-26-tfT" firstAttribute="leading" secondItem="BY4-qQ-PF2" secondAttribute="leading" id="tfh-lI-bcd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Группы" id="L3v-hY-Qlp"/>
+                    <navigationItem key="navigationItem" title="Мои группы" id="L3v-hY-Qlp">
+                        <barButtonItem key="rightBarButtonItem" title="Добавить группу" image="plus.square.fill.on.square.fill" catalog="system" id="9lO-CA-APV">
+                            <color key="tintColor" red="0.0078431377190000002" green="0.0" blue="0.0039215688589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="QBm-7a-wqD" kind="show" id="G4W-tR-tQv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myGroupsTableView" destination="Lvt-26-tfT" id="U9Z-uk-Rvu"/>
                     </connections>
@@ -154,14 +161,29 @@
         <!--AddGroupView-->
         <scene sceneID="H7g-Xb-38I">
             <objects>
-                <viewController id="QBm-7a-wqD" userLabel="AddGroupView" sceneMemberID="viewController">
+                <viewController id="QBm-7a-wqD" userLabel="AddGroupView" customClass="AllGroupsViewController" customModule="VKclient_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7DL-Jc-RDA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fS5-So-cOh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3u7-Mk-KTm"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="fS5-So-cOh" firstAttribute="top" secondItem="3u7-Mk-KTm" secondAttribute="top" id="FKC-uu-F6W"/>
+                            <constraint firstItem="3u7-Mk-KTm" firstAttribute="trailing" secondItem="fS5-So-cOh" secondAttribute="trailing" id="FgH-uu-35x"/>
+                            <constraint firstItem="fS5-So-cOh" firstAttribute="leading" secondItem="3u7-Mk-KTm" secondAttribute="leading" id="bCW-KZ-Kmg"/>
+                            <constraint firstItem="3u7-Mk-KTm" firstAttribute="bottom" secondItem="fS5-So-cOh" secondAttribute="bottom" id="eAR-vt-vIs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Поиск групп" id="tuK-S4-Vz6"/>
+                    <connections>
+                        <outlet property="allGroupsTableView" destination="fS5-So-cOh" id="pLF-xB-XeA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0Q-66-6Zl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,8 +227,20 @@
                     <view key="view" contentMode="scaleToFill" id="q0j-O9-s5U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sha-zR-gnF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AlS-nk-zlM"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="Sha-zR-gnF" firstAttribute="top" secondItem="AlS-nk-zlM" secondAttribute="top" id="5sa-05-BQn"/>
+                            <constraint firstItem="Sha-zR-gnF" firstAttribute="leading" secondItem="AlS-nk-zlM" secondAttribute="leading" id="BEB-5P-54g"/>
+                            <constraint firstItem="AlS-nk-zlM" firstAttribute="bottom" secondItem="Sha-zR-gnF" secondAttribute="bottom" id="Imh-xz-ZLP"/>
+                            <constraint firstItem="AlS-nk-zlM" firstAttribute="trailing" secondItem="Sha-zR-gnF" secondAttribute="trailing" id="chJ-Sb-ZWh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Галерея" id="L5W-YB-LpB"/>
                 </viewController>
@@ -312,6 +346,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="mainLogo" width="539" height="498"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <image name="plus.square.fill.on.square.fill" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
