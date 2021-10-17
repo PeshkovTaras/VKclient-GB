@@ -10,6 +10,4 @@ import UIKit
 struct Group {
     var title = String()
     var avatar = UIImage()
-    
-    
 }

@@ -123,32 +123,29 @@
         <!--GroupView-->
         <scene sceneID="Xya-fV-9ea">
             <objects>
-                <viewController title="MyGroup" id="PWV-06-7Zv" userLabel="GroupView" sceneMemberID="viewController">
+                <viewController title="MyGroup" id="PWV-06-7Zv" userLabel="GroupView" customClass="MyGroupsViewController" customModule="VKclient_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CTw-Am-WKV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BE-L9-NpM">
-                                <rect key="frame" x="103.5" y="743" width="207" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="g4G-fd-m4h"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Поиск групп"/>
-                                <connections>
-                                    <segue destination="QBm-7a-wqD" kind="show" id="VBg-Np-sa0"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lvt-26-tfT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BY4-qQ-PF2"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="6BE-L9-NpM" firstAttribute="centerX" secondItem="BY4-qQ-PF2" secondAttribute="centerX" id="Ote-pu-9YG"/>
-                            <constraint firstItem="BY4-qQ-PF2" firstAttribute="bottom" secondItem="6BE-L9-NpM" secondAttribute="bottom" constant="30" id="hPX-Nq-uCP"/>
-                            <constraint firstItem="6BE-L9-NpM" firstAttribute="width" secondItem="CTw-Am-WKV" secondAttribute="width" multiplier="0.5" id="rJX-ih-RS7"/>
+                            <constraint firstItem="BY4-qQ-PF2" firstAttribute="bottom" secondItem="Lvt-26-tfT" secondAttribute="bottom" id="b9l-Lb-Fgd"/>
+                            <constraint firstItem="Lvt-26-tfT" firstAttribute="top" secondItem="BY4-qQ-PF2" secondAttribute="top" id="q6Y-RB-Ah2"/>
+                            <constraint firstItem="BY4-qQ-PF2" firstAttribute="trailing" secondItem="Lvt-26-tfT" secondAttribute="trailing" id="r39-Eh-bTf"/>
+                            <constraint firstItem="Lvt-26-tfT" firstAttribute="leading" secondItem="BY4-qQ-PF2" secondAttribute="leading" id="tfh-lI-bcd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Группы" id="L3v-hY-Qlp"/>
+                    <connections>
+                        <outlet property="myGroupsTableView" destination="Lvt-26-tfT" id="U9Z-uk-Rvu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfS-Sg-Lf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

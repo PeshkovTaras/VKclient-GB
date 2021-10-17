@@ -18,6 +18,7 @@
 		668721EB2715CE6C00AC0630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 668721EA2715CE6C00AC0630 /* Assets.xcassets */; };
 		668721EE2715CE6C00AC0630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668721EC2715CE6C00AC0630 /* LaunchScreen.storyboard */; };
 		668721F62715D8B000AC0630 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668721F52715D8B000AC0630 /* LoginViewController.swift */; };
+		66E45C03271C366B00761762 /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E45C02271C366B00761762 /* MyGroupsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		668721ED2715CE6C00AC0630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		668721EF2715CE6C00AC0630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		668721F52715D8B000AC0630 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		66E45C02271C366B00761762 /* MyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				668721F52715D8B000AC0630 /* LoginViewController.swift */,
 				661CB2C0271B10AE00A5ED05 /* FriendsViewController.swift */,
+				66E45C02271C366B00761762 /* MyGroupsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -93,9 +96,9 @@
 		668721E02715CE6C00AC0630 /* VKclient-1 */ = {
 			isa = PBXGroup;
 			children = (
+				661CB2B5271B092200A5ED05 /* Model */,
 				661CB2BF271B107400A5ED05 /* Controllers */,
 				661CB2BA271B0AF300A5ED05 /* cells */,
-				661CB2B5271B092200A5ED05 /* Model */,
 				668721E12715CE6C00AC0630 /* AppDelegate.swift */,
 				668721E32715CE6C00AC0630 /* SceneDelegate.swift */,
 				668721E72715CE6C00AC0630 /* Main.storyboard */,
@@ -182,6 +185,7 @@
 				668721F62715D8B000AC0630 /* LoginViewController.swift in Sources */,
 				668721E22715CE6C00AC0630 /* AppDelegate.swift in Sources */,
 				668721E42715CE6C00AC0630 /* SceneDelegate.swift in Sources */,
+				66E45C03271C366B00761762 /* MyGroupsViewController.swift in Sources */,
 				661CB2C1271B10AE00A5ED05 /* FriendsViewController.swift in Sources */,
 				661CB2B9271B095600A5ED05 /* Group.swift in Sources */,
 				661CB2B7271B093E00A5ED05 /* Friend.swift in Sources */,
