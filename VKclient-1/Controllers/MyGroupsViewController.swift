@@ -12,13 +12,9 @@ class MyGroupsViewController: UIViewController {
     @IBOutlet weak var myGroupsTableView: UITableView!
     
     let reuseIdentifierCustom = "reuseIdentifierCustom"
+    let fromAllGroupsToMyGroupsSegue = "fromAllGroupsToMyGroups"
     
     var myGroupsArray = [Group]()
-    
-    func addMyGroup() {
-    //
-      //
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,11 +24,27 @@ class MyGroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addMyGroup()
-        
         myGroupsTableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
         myGroupsTableView.dataSource = self
         myGroupsTableView.delegate = self
+    }
+    
+        @IBAction func unwindSegueToMyGroups(segue: UIStoryboardSegue) {
+            if segue.identifier == fromAllGroupsToMyGroupsSegue,
+               let sourceVC = segue.source as? AllGroupsViewController,
+               let selectedGroup = sourceVC.selectedGroup {
+                if isItemAlreadyInArray(group: selectedGroup) { return }
+                self.myGroupsArray.append(selectedGroup)
+                myGroupsTableView.reloadData()
+            }
+        }
+    
+
+    func isItemAlreadyInArray(group: Group) -> Bool {
+           return myGroupsArray.contains(where: { sourceGroup in
+            sourceGroup.title == group.title
+        })
+      
     }
 }
 

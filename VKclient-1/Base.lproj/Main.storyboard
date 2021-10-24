@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -183,9 +184,11 @@
                     <navigationItem key="navigationItem" title="Поиск групп" id="tuK-S4-Vz6"/>
                     <connections>
                         <outlet property="allGroupsTableView" destination="fS5-So-cOh" id="pLF-xB-XeA"/>
+                        <segue destination="Jz4-ia-jmf" kind="unwind" identifier="fromAllGroupsToMyGroups" unwindAction="unwindSegueToMyGroupsWithSegue:" id="Xmn-qD-HpZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0Q-66-6Zl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Jz4-ia-jmf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3400.0000000000005" y="648.88392857142856"/>
         </scene>
@@ -214,6 +217,7 @@
                     <navigationItem key="navigationItem" title="Друзья" id="6hW-zN-Xeu"/>
                     <connections>
                         <outlet property="tableView" destination="rRz-N8-aky" id="1IH-NZ-7xp"/>
+                        <segue destination="ZI8-Nb-iIu" kind="show" identifier="fromFriendsToGallery" id="eqV-XS-Rgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YP7-0q-HgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,26 +227,45 @@
         <!--GalleryView-->
         <scene sceneID="Sv8-NN-073">
             <objects>
-                <viewController id="ZI8-Nb-iIu" userLabel="GalleryView" sceneMemberID="viewController">
+                <viewController id="ZI8-Nb-iIu" userLabel="GalleryView" customClass="GalleryViewController" customModule="VKclient_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q0j-O9-s5U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sha-zR-gnF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X49-jI-DtZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fkB-Tz-fbM">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="customReuseIdentifier" id="pzE-Kp-Nbm">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AgM-7y-qTJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AlS-nk-zlM"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="Sha-zR-gnF" firstAttribute="top" secondItem="AlS-nk-zlM" secondAttribute="top" id="5sa-05-BQn"/>
-                            <constraint firstItem="Sha-zR-gnF" firstAttribute="leading" secondItem="AlS-nk-zlM" secondAttribute="leading" id="BEB-5P-54g"/>
-                            <constraint firstItem="AlS-nk-zlM" firstAttribute="bottom" secondItem="Sha-zR-gnF" secondAttribute="bottom" id="Imh-xz-ZLP"/>
-                            <constraint firstItem="AlS-nk-zlM" firstAttribute="trailing" secondItem="Sha-zR-gnF" secondAttribute="trailing" id="chJ-Sb-ZWh"/>
+                            <constraint firstItem="AlS-nk-zlM" firstAttribute="bottom" secondItem="X49-jI-DtZ" secondAttribute="bottom" id="6EM-Sk-ekZ"/>
+                            <constraint firstItem="AlS-nk-zlM" firstAttribute="trailing" secondItem="X49-jI-DtZ" secondAttribute="trailing" id="BSH-at-ZYb"/>
+                            <constraint firstItem="X49-jI-DtZ" firstAttribute="top" secondItem="AlS-nk-zlM" secondAttribute="top" id="Lc5-3Y-vp3"/>
+                            <constraint firstItem="X49-jI-DtZ" firstAttribute="leading" secondItem="AlS-nk-zlM" secondAttribute="leading" id="flS-qh-2e3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Галерея" id="L5W-YB-LpB"/>
+                    <connections>
+                        <outlet property="collectionView" destination="X49-jI-DtZ" id="xOv-cg-xuX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BS7-Xt-vr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
