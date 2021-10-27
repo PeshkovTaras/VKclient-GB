@@ -60,12 +60,16 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBS-QI-PKF">
-                                                <rect key="frame" x="41.5" y="380.5" width="331" height="40"/>
+                                                <rect key="frame" x="62" y="380.5" width="290" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="BVI-m1-JPg"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Войти"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Войти">
+                                                    <backgroundConfiguration key="background"/>
+                                                    <color key="baseBackgroundColor" red="0.34509804840000002" green="0.53725492949999998" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="pressButton:" destination="mXU-dM-6ii" eventType="touchUpInside" id="1rN-UY-pl7"/>
                                                 </connections>
@@ -81,7 +85,7 @@
                                             <constraint firstItem="Ddp-Kp-Irk" firstAttribute="width" secondItem="1Vc-8W-WaU" secondAttribute="width" multiplier="0.5" id="NwJ-Yn-un3"/>
                                             <constraint firstItem="Zid-Hz-53C" firstAttribute="centerX" secondItem="1Vc-8W-WaU" secondAttribute="centerX" id="WLv-fg-Why"/>
                                             <constraint firstItem="JBS-QI-PKF" firstAttribute="top" secondItem="fae-DB-Iah" secondAttribute="bottom" constant="40" id="XM6-fx-Ssn"/>
-                                            <constraint firstItem="JBS-QI-PKF" firstAttribute="width" secondItem="1Vc-8W-WaU" secondAttribute="width" multiplier="0.8" id="YO9-6r-2u3"/>
+                                            <constraint firstItem="JBS-QI-PKF" firstAttribute="width" secondItem="1Vc-8W-WaU" secondAttribute="width" multiplier="0.7" id="YO9-6r-2u3"/>
                                             <constraint firstItem="Zid-Hz-53C" firstAttribute="width" secondItem="1Vc-8W-WaU" secondAttribute="width" multiplier="0.7" id="cmV-LP-UWT"/>
                                             <constraint firstItem="fae-DB-Iah" firstAttribute="centerX" secondItem="1Vc-8W-WaU" secondAttribute="centerX" id="gH5-wD-tNU"/>
                                             <constraint firstItem="fae-DB-Iah" firstAttribute="top" secondItem="Zid-Hz-53C" secondAttribute="bottom" constant="20" id="iIi-og-C62"/>
@@ -112,8 +116,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="JBS-QI-PKF" id="fQM-Km-e6B"/>
                         <outlet property="loginTextField" destination="Zid-Hz-53C" id="bhr-OE-4yA"/>
                         <outlet property="passwordTextField" destination="fae-DB-Iah" id="oa6-b2-Mcv"/>
+                        <outlet property="vkLabel" destination="OK6-UL-3uF" id="Std-u5-vSp"/>
                         <segue destination="TOZ-nC-EUe" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" id="9JN-Tj-95j"/>
                     </connections>
                 </viewController>
@@ -201,21 +207,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rRz-N8-aky">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9is-XX-JBv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v9T-Sk-ZIO"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="v9T-Sk-ZIO" firstAttribute="trailing" secondItem="rRz-N8-aky" secondAttribute="trailing" id="9vN-VK-KRk"/>
+                            <constraint firstItem="9is-XX-JBv" firstAttribute="top" secondItem="v9T-Sk-ZIO" secondAttribute="top" id="Tci-4k-HAj"/>
+                            <constraint firstItem="9is-XX-JBv" firstAttribute="leading" secondItem="v9T-Sk-ZIO" secondAttribute="leading" id="TiJ-9N-QNr"/>
                             <constraint firstItem="rRz-N8-aky" firstAttribute="leading" secondItem="v9T-Sk-ZIO" secondAttribute="leading" id="Xx3-M0-hc9"/>
                             <constraint firstItem="v9T-Sk-ZIO" firstAttribute="bottom" secondItem="rRz-N8-aky" secondAttribute="bottom" id="a3H-MH-eZ3"/>
-                            <constraint firstItem="rRz-N8-aky" firstAttribute="top" secondItem="v9T-Sk-ZIO" secondAttribute="top" id="fu4-sX-WzV"/>
+                            <constraint firstItem="9is-XX-JBv" firstAttribute="trailing" secondItem="v9T-Sk-ZIO" secondAttribute="trailing" id="lML-N6-02V"/>
+                            <constraint firstItem="rRz-N8-aky" firstAttribute="top" secondItem="9is-XX-JBv" secondAttribute="bottom" id="plb-A8-78Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Друзья" id="6hW-zN-Xeu"/>
                     <connections>
+                        <outlet property="searchBar" destination="9is-XX-JBv" id="I69-I8-TsP"/>
                         <outlet property="tableView" destination="rRz-N8-aky" id="1IH-NZ-7xp"/>
                         <segue destination="ZI8-Nb-iIu" kind="show" identifier="fromFriendsToGallery" id="eqV-XS-Rgm"/>
                     </connections>

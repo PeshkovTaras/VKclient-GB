@@ -12,7 +12,6 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let customReuseIdentifier = "customReuseIdentifier"
-    
     var photos = [UIImage]()
 
     override func viewDidLoad() {

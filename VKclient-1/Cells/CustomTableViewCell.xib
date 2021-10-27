@@ -16,32 +16,54 @@
                 <rect key="frame" x="0.0" y="0.0" width="460" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iG6-PR-8GF">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4D-5J-JZn">
                         <rect key="frame" x="4" y="4" width="79" height="79"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iG6-PR-8GF">
+                                <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="iG6-PR-8GF" secondAttribute="height" multiplier="1:1" id="zA7-dX-Pdx"/>
+                            <constraint firstAttribute="bottom" secondItem="iG6-PR-8GF" secondAttribute="bottom" id="069-zj-nws"/>
+                            <constraint firstAttribute="width" secondItem="g4D-5J-JZn" secondAttribute="height" multiplier="1:1" id="6ib-6d-Gg6"/>
+                            <constraint firstItem="iG6-PR-8GF" firstAttribute="top" secondItem="g4D-5J-JZn" secondAttribute="top" id="F3D-Id-Rcl"/>
+                            <constraint firstItem="iG6-PR-8GF" firstAttribute="leading" secondItem="g4D-5J-JZn" secondAttribute="leading" id="Jg0-54-rGM"/>
+                            <constraint firstAttribute="trailing" secondItem="iG6-PR-8GF" secondAttribute="trailing" id="W7Y-Lm-zy8"/>
                         </constraints>
-                    </imageView>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTj-dz-fgd">
-                        <rect key="frame" x="87" y="4" width="42" height="79"/>
+                        <rect key="frame" x="91" y="33.5" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRN-XE-Ryk" customClass="LikeCounterView" customModule="VKclient_1" customModuleProvider="target">
+                        <rect key="frame" x="373" y="0.0" width="87" height="87"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="VRN-XE-Ryk" secondAttribute="height" multiplier="1:1" id="hrc-Kp-H72"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="uTj-dz-fgd" secondAttribute="bottom" constant="4" id="4Af-2s-6Zz"/>
-                    <constraint firstAttribute="bottom" secondItem="iG6-PR-8GF" secondAttribute="bottom" constant="4" id="AvX-kt-W9K"/>
-                    <constraint firstItem="iG6-PR-8GF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NEP-VF-MHI"/>
-                    <constraint firstItem="iG6-PR-8GF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="RPb-PU-wvm"/>
-                    <constraint firstItem="iG6-PR-8GF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="aPf-V0-xi8"/>
-                    <constraint firstItem="uTj-dz-fgd" firstAttribute="leading" secondItem="iG6-PR-8GF" secondAttribute="trailing" constant="4" id="cHA-4h-Rov"/>
-                    <constraint firstItem="uTj-dz-fgd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="eot-sA-bp6"/>
+                    <constraint firstItem="g4D-5J-JZn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="739-vC-lpO"/>
+                    <constraint firstItem="VRN-XE-Ryk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Gls-hP-jkC"/>
+                    <constraint firstItem="uTj-dz-fgd" firstAttribute="leading" secondItem="iG6-PR-8GF" secondAttribute="trailing" constant="8" id="Rej-em-BWi"/>
+                    <constraint firstItem="g4D-5J-JZn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XMi-TH-H9i"/>
+                    <constraint firstAttribute="trailing" secondItem="VRN-XE-Ryk" secondAttribute="trailing" id="YlU-nk-XfH"/>
+                    <constraint firstItem="g4D-5J-JZn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="abg-BK-sfo"/>
+                    <constraint firstAttribute="bottom" secondItem="g4D-5J-JZn" secondAttribute="bottom" constant="4" id="j4G-5a-Zum"/>
+                    <constraint firstItem="uTj-dz-fgd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sda-yS-MUV"/>
+                    <constraint firstAttribute="bottom" secondItem="VRN-XE-Ryk" secondAttribute="bottom" id="zcR-zs-8Af"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarImageView" destination="iG6-PR-8GF" id="BCJ-sn-e2e"/>
+                <outlet property="backView" destination="g4D-5J-JZn" id="PGv-jc-AKg"/>
+                <outlet property="likeView" destination="VRN-XE-Ryk" id="db8-8X-rgy"/>
                 <outlet property="titleLabel" destination="uTj-dz-fgd" id="L3d-Ur-YwC"/>
             </connections>
             <point key="canvasLocation" x="82.608695652173921" y="112.16517857142857"/>

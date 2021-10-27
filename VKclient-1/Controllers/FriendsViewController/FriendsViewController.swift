@@ -10,18 +10,20 @@ import UIKit
 class FriendsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let reuseIdentifierCustom = "reuseIdentifierCustom"
-    
     let fromFriendsToGallerySegue = "fromFriendsToGallery"
+    var savedFriendsArray = [Friend]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        savedFriendsArray = friendsArray
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifierCustom)
-        
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,7 +43,9 @@ class FriendsViewController: UIViewController {
                 resultArray.append(nameFirstLetter.lowercased())
             }
         }
-        return resultArray
+        return resultArray.sorted { firstItem, secondItem in
+            return firstItem < secondItem
+        }
     }
 }
 
@@ -57,41 +61,17 @@ func arrayByLetter(sourceArray: [Friend], letter: String) -> [Friend] {
     return resultArray
 }
 
-
-//MARK: - Extension
-
-extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return arrayOfLetter(sourceArray: friendsArray).count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
+extension FriendsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        friendsArray = savedFriendsArray
         
-        return arrayOfLetter(sourceArray: friendsArray)[section].uppercased()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[section]).count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell
-        else { return UITableViewCell() }
-        
-        cell.configure(friend: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row])
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return CGFloat(100)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: fromFriendsToGallerySegue, sender: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row])
+        if searchText.isEmpty {
+            friendsArray = savedFriendsArray
+        } else {
+           friendsArray = friendsArray.filter { itemFriend in
+               itemFriend.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+        tableView.reloadData()
     }
 }
-

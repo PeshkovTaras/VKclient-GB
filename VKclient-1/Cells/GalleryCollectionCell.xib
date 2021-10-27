@@ -23,12 +23,22 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tbT-3j-59Q">
                                 <rect key="frame" x="3" y="3" width="153" height="120"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHq-Qs-Egr" customClass="LikeCounterView" customModule="VKclient_1" customModuleProvider="target">
+                                <rect key="frame" x="119" y="86" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ImV-Vq-msi"/>
+                                    <constraint firstAttribute="height" constant="40" id="Lco-MQ-eg8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tbT-3j-59Q" secondAttribute="bottom" constant="3" id="BK3-Is-bTB"/>
                             <constraint firstItem="tbT-3j-59Q" firstAttribute="leading" secondItem="2dV-yV-HEu" secondAttribute="leading" constant="3" id="BqG-RQ-0Sp"/>
+                            <constraint firstAttribute="trailing" secondItem="kHq-Qs-Egr" secondAttribute="trailing" id="CMr-iT-HaA"/>
                             <constraint firstAttribute="trailing" secondItem="tbT-3j-59Q" secondAttribute="trailing" constant="3" id="Px8-hg-Kp7"/>
+                            <constraint firstAttribute="bottom" secondItem="kHq-Qs-Egr" secondAttribute="bottom" id="Y7e-gx-Loc"/>
                             <constraint firstItem="tbT-3j-59Q" firstAttribute="top" secondItem="2dV-yV-HEu" secondAttribute="top" constant="3" id="z8H-kV-fhL"/>
                         </constraints>
                     </view>

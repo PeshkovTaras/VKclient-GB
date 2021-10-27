@@ -8,7 +8,7 @@
 import UIKit
 
 class MyGroupsViewController: UIViewController {
-
+    
     @IBOutlet weak var myGroupsTableView: UITableView!
     
     let reuseIdentifierCustom = "reuseIdentifierCustom"
@@ -29,22 +29,20 @@ class MyGroupsViewController: UIViewController {
         myGroupsTableView.delegate = self
     }
     
-        @IBAction func unwindSegueToMyGroups(segue: UIStoryboardSegue) {
-            if segue.identifier == fromAllGroupsToMyGroupsSegue,
-               let sourceVC = segue.source as? AllGroupsViewController,
-               let selectedGroup = sourceVC.selectedGroup {
-                if isItemAlreadyInArray(group: selectedGroup) { return }
-                self.myGroupsArray.append(selectedGroup)
-                myGroupsTableView.reloadData()
-            }
+    @IBAction func unwindSegueToMyGroups(segue: UIStoryboardSegue) {
+        if segue.identifier == fromAllGroupsToMyGroupsSegue,
+           let sourceVC = segue.source as? AllGroupsViewController,
+           let selectedGroup = sourceVC.selectedGroup {
+            if isItemAlreadyInArray(group: selectedGroup) { return }
+            self.myGroupsArray.append(selectedGroup)
+            myGroupsTableView.reloadData()
         }
+    }
     
-
     func isItemAlreadyInArray(group: Group) -> Bool {
-           return myGroupsArray.contains(where: { sourceGroup in
+        return myGroupsArray.contains(where: { sourceGroup in
             sourceGroup.title == group.title
         })
-      
     }
 }
 
@@ -57,8 +55,7 @@ extension MyGroupsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 100
+        return customTableCellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol CustomTableCellProtocol: AnyObject {
+    func customTableCellLikeCounterIncrement(counter: Int)
+    func customTableCellLikeCounterDecrement(counter: Int)
+}
+
 class CustomTableViewCell: UITableViewCell {
     
-    
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var likeView: LikeCounterView!
+    
+    weak var delegate: CustomTableCellProtocol?
     
     override func prepareForReuse() {
         avatarImageView.image = nil
@@ -31,13 +38,31 @@ class CustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        likeView.delegate = self
+        
+        avatarImageView.layer.cornerRadius = (customTableCellHeight-8)/2
+        avatarImageView.layer.borderColor = UIColor.black.cgColor
+        avatarImageView.layer.borderWidth = 1
+        
+        backView.layer.cornerRadius = (customTableCellHeight-8)/2
+        backView.layer.shadowColor = UIColor.black.cgColor
+        backView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        backView.layer.shadowRadius = 7
+        backView.layer.shadowOpacity = 0.5
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+}
+
+extension CustomTableViewCell: LikeCounterProtocol {
+    func likeCounterIncrement(counter: Int) {
+        delegate?.customTableCellLikeCounterIncrement(counter: counter)
+    }
+    
+    func likeCounterDecrement(counter: Int) {
+        delegate?.customTableCellLikeCounterDecrement(counter: counter)
+    }
 }
