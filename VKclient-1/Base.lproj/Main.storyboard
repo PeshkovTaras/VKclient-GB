@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mXU-dM-6ii">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mXU-dM-6ii">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ro2-1m-TDQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hb6-k8-Oh8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
@@ -75,7 +79,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="JBS-QI-PKF" secondAttribute="bottom" constant="385.5" id="0Df-EH-9v0"/>
                                             <constraint firstItem="fae-DB-Iah" firstAttribute="width" secondItem="1Vc-8W-WaU" secondAttribute="width" multiplier="0.7" id="1KQ-WW-6Yk"/>
@@ -95,6 +99,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="1Vc-8W-WaU" firstAttribute="trailing" secondItem="mne-R5-naq" secondAttribute="trailing" id="2FG-Dd-gOL"/>
                                     <constraint firstItem="1Vc-8W-WaU" firstAttribute="leading" secondItem="mne-R5-naq" secondAttribute="leading" id="3OA-nq-0ue"/>
@@ -109,6 +114,10 @@
                         <viewLayoutGuide key="safeArea" id="0hx-Vd-PMN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ro2-1m-TDQ" firstAttribute="top" secondItem="0hx-Vd-PMN" secondAttribute="top" id="4w5-ss-IBi"/>
+                            <constraint firstItem="0hx-Vd-PMN" firstAttribute="trailing" secondItem="Ro2-1m-TDQ" secondAttribute="trailing" id="5mc-of-Dxg"/>
+                            <constraint firstItem="0hx-Vd-PMN" firstAttribute="bottom" secondItem="Ro2-1m-TDQ" secondAttribute="bottom" id="Ja7-SD-Hyf"/>
+                            <constraint firstItem="Ro2-1m-TDQ" firstAttribute="leading" secondItem="0hx-Vd-PMN" secondAttribute="leading" id="Wya-0B-nIk"/>
                             <constraint firstItem="Hb6-k8-Oh8" firstAttribute="leading" secondItem="XNc-7X-6e4" secondAttribute="leading" id="h6k-mU-8Wy"/>
                             <constraint firstItem="Hb6-k8-Oh8" firstAttribute="trailing" secondItem="0hx-Vd-PMN" secondAttribute="trailing" id="iwC-Ex-Air"/>
                             <constraint firstItem="Hb6-k8-Oh8" firstAttribute="bottom" secondItem="0hx-Vd-PMN" secondAttribute="bottom" id="jRk-8n-ew3"/>
@@ -116,6 +125,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gradientView" destination="Ro2-1m-TDQ" id="kMb-GI-WjT"/>
                         <outlet property="loginButton" destination="JBS-QI-PKF" id="fQM-Km-e6B"/>
                         <outlet property="loginTextField" destination="Zid-Hz-53C" id="bhr-OE-4yA"/>
                         <outlet property="passwordTextField" destination="fae-DB-Iah" id="oa6-b2-Mcv"/>

@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var vkLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -16,11 +17,18 @@ class LoginViewController: UIViewController {
     
     var isLikeOn = false
     
+    let gradientLayer = CAGradientLayer()
+    
     func addShadow(view: UIView) {
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOffset = CGSize(width: 5, height: 5)
         view.layer.shadowRadius = 5
         view.layer.shadowOpacity = 0.2
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradientLayer.frame = gradientView.bounds
     }
     
     override func viewDidLoad() {
@@ -32,6 +40,14 @@ class LoginViewController: UIViewController {
         addShadow(view: loginTextField)
         addShadow(view: passwordTextField)
         addShadow(view: loginButton)
+        
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor.systemGray4.cgColor]
+        gradientLayer.locations = [0, 1]
+        gradientLayer.startPoint = CGPoint.zero
+        gradientLayer.endPoint = CGPoint.init(x: 0, y: 1)
+        
+        gradientLayer.frame = gradientView.bounds
+        gradientView.layer.addSublayer(gradientLayer)
     }
     
     //MARK: - Hide keyboard
