@@ -32,7 +32,7 @@ class MyGroupsViewController: UIViewController {
     @IBAction func unwindSegueToMyGroups(segue: UIStoryboardSegue) {
         if segue.identifier == fromAllGroupsToMyGroupsSegue,
            let sourceVC = segue.source as? AllGroupsViewController,
-           let selectedGroup = sourceVC.selectedGroup {
+            let selectedGroup = sourceVC.selectedGroup {
             if isItemAlreadyInArray(group: selectedGroup) { return }
             self.myGroupsArray.append(selectedGroup)
             myGroupsTableView.reloadData()
@@ -62,7 +62,7 @@ extension MyGroupsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath)
                 as? CustomTableViewCell else { return UITableViewCell() }
         
-        cell.configure(group: myGroupsArray[indexPath.row])
+        cell.configure(group: myGroupsArray[indexPath.row], completion: nil)
         
         return cell
     }

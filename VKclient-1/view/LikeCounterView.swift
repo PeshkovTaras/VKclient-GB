@@ -51,12 +51,26 @@ protocol LikeCounterProtocol: AnyObject {
     
     @IBAction func pressHeartButton(_ sender: UIButton) {
         if isHeartOn {
-            self.heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            UIView.transition(with: heartButton,
+                              duration: 0.5,
+                              options: [.transitionFlipFromTop],
+                              animations: {
+                self.heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            },
+                              completion: nil)
+            
             likesCounter -= 1
             likeCounterLabel.text = String(likesCounter)
             delegate?.likeCounterDecrement(counter: likesCounter)
         } else {
-            self.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            UIView.transition(with: heartButton,
+                              duration: 0.5,
+                              options: [.transitionFlipFromBottom],
+                              animations: {
+                self.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            },
+                              completion: nil)
+            
             likesCounter += 1
             likeCounterLabel.text = String(likesCounter)
             delegate?.likeCounterIncrement(counter: likesCounter)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,14 +22,30 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iG6-PR-8GF">
                                 <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-6O-fkj">
+                                <rect key="frame" x="6" y="24" width="67" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressAvatarButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vfe-3P-Ih5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="iG6-PR-8GF" secondAttribute="bottom" id="069-zj-nws"/>
+                            <constraint firstItem="yG8-6O-fkj" firstAttribute="centerX" secondItem="iG6-PR-8GF" secondAttribute="centerX" id="0aw-fb-IJY"/>
                             <constraint firstAttribute="width" secondItem="g4D-5J-JZn" secondAttribute="height" multiplier="1:1" id="6ib-6d-Gg6"/>
                             <constraint firstItem="iG6-PR-8GF" firstAttribute="top" secondItem="g4D-5J-JZn" secondAttribute="top" id="F3D-Id-Rcl"/>
                             <constraint firstItem="iG6-PR-8GF" firstAttribute="leading" secondItem="g4D-5J-JZn" secondAttribute="leading" id="Jg0-54-rGM"/>
+                            <constraint firstItem="yG8-6O-fkj" firstAttribute="height" secondItem="iG6-PR-8GF" secondAttribute="height" multiplier="0.392405" id="Lrb-H1-hfX"/>
+                            <constraint firstItem="yG8-6O-fkj" firstAttribute="width" secondItem="iG6-PR-8GF" secondAttribute="width" multiplier="0.848101" id="Npk-R5-Wa1"/>
                             <constraint firstAttribute="trailing" secondItem="iG6-PR-8GF" secondAttribute="trailing" id="W7Y-Lm-zy8"/>
+                            <constraint firstItem="yG8-6O-fkj" firstAttribute="centerY" secondItem="iG6-PR-8GF" secondAttribute="centerY" id="g04-eV-tch"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTj-dz-fgd">

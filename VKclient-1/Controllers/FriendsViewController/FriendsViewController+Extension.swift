@@ -25,7 +25,11 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath) as? CustomTableViewCell
         else { return UITableViewCell() }
         
-        cell.configure(friend: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row])
+        cell.configure(friend: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row], completion: { [weak self] friend in
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: self.fromFriendsToGallerySegue, sender: friend)
+            
+        })
         
         return cell
     }
@@ -35,6 +39,6 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: fromFriendsToGallerySegue, sender: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row])
+//        performSegue(withIdentifier: fromFriendsToGallerySegue, sender: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row])
     }
 }

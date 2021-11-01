@@ -21,7 +21,15 @@ class AllGroupsViewController: UIViewController {
         allGroupsTableView.dataSource = self
         allGroupsTableView.delegate = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == fromAllGroupsToMyGroupsSegue,
+           let group = sender as? Group {
+            selectedGroup = group
+        }
+    }
 }
+
 
 //MARK: - Extension
 
@@ -38,7 +46,10 @@ extension AllGroupsViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierCustom, for: indexPath)
                 as? CustomTableViewCell else { return UITableViewCell() }
         
-        cell.configure(group: allgroupsArray[indexPath.row])
+        cell.configure(group: allgroupsArray[indexPath.row], completion: { [weak self] group in
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: self.fromAllGroupsToMyGroupsSegue, sender: group)
+        })
         cell.delegate = self
         
         return cell
@@ -46,8 +57,7 @@ extension AllGroupsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.selectedGroup = allgroupsArray[indexPath.row]
-        performSegue(withIdentifier: fromAllGroupsToMyGroupsSegue, sender: nil)
+        performSegue(withIdentifier: fromAllGroupsToMyGroupsSegue, sender: allgroupsArray[indexPath.row])
     }
 }
 
