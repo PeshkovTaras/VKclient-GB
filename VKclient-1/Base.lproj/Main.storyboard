@@ -128,6 +128,7 @@
                         <outlet property="gradientView" destination="Ro2-1m-TDQ" id="kMb-GI-WjT"/>
                         <outlet property="loginButton" destination="JBS-QI-PKF" id="fQM-Km-e6B"/>
                         <outlet property="loginTextField" destination="Zid-Hz-53C" id="bhr-OE-4yA"/>
+                        <outlet property="logoImage" destination="Ddp-Kp-Irk" id="WIN-1N-T2N"/>
                         <outlet property="passwordTextField" destination="fae-DB-Iah" id="oa6-b2-Mcv"/>
                         <outlet property="vkLabel" destination="OK6-UL-3uF" id="Std-u5-vSp"/>
                         <segue destination="TOZ-nC-EUe" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" id="9JN-Tj-95j"/>

@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var vkLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
@@ -33,6 +34,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animateLogin()
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         tapRecognizer.cancelsTouchesInView = false
@@ -95,4 +98,27 @@ class LoginViewController: UIViewController {
     @IBAction func passwordTextFieldEditing(_ sender: UITextField) {
         passwordTextField.textColor = UIColor.label
     }
+    
+    //MARK: - AnimateLogin
+    
+    func animateLogin() {
+        
+        self.logoImage.transform = CGAffineTransform(translationX: 0, y: -50)
+        self.loginTextField.transform = CGAffineTransform(translationX: -70, y: 0)
+        self.passwordTextField.transform = CGAffineTransform(translationX: 70, y: 0)
+        self.loginButton.transform = CGAffineTransform(translationX: 0, y: +100)
+        
+        UIView.animate(withDuration: 3,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 10,
+                       options: [] ) {
+            self.logoImage.transform = .identity
+            self.loginTextField.transform = .identity
+            self.passwordTextField.transform = .identity
+            self.loginButton.transform = .identity
+        }
+        
+    }
+    
 }
