@@ -1,44 +1,40 @@
 //
-//  GalleryViewController.swift
+//  HorizonGaleryVC.swift
 //  VKclient-1
 //
-//  Created by Тарас Пешков on 20.10.2021.
+//  Created by Тарас Пешков on 02.11.2021.
 //
 
 import UIKit
 
-class GalleryViewController: UIViewController {
+class HorizonGaleryVC: UIViewController {
+
     
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var galleryView: UIView!
     
-   var mainImageView = UIImageView()
-    var secondaryImageView = UIImageView()
+    
+    private var mainImageView = UIImageView() //UIView()
+    private var secondaryImageView = UIImageView() //UIView()
+   // private var images = [UIImage]()
     private var isLeftSwipe = false
     private var isRightSwipe = false
     private var chooseFlag = false
-     var currentIndex = 0
+    private var currentIndex = 0
+
     
     private var interactiveAnimator: UIViewPropertyAnimator!
     
-    let customReuseIdentifier = "customReuseIdentifier"
-    var photos = [UIImage]()
+    private var images = [UIImage(named: "avatar1")!, UIImage(named: "avatar2")!, UIImage(named: "avatar3")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil), forCellWithReuseIdentifier: customReuseIdentifier)
-        
-        setImages(images: photos)
+        setImages(images: images)
 
         mainImageView.frame = galleryView.bounds
-        mainImageView.contentMode = .scaleAspectFit
         galleryView.addSubview(mainImageView)
 
         secondaryImageView.frame = galleryView.bounds
-        secondaryImageView.contentMode = .scaleAspectFit
         secondaryImageView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)
         galleryView.addSubview(secondaryImageView)
 
@@ -46,6 +42,8 @@ class GalleryViewController: UIViewController {
         galleryView.addGestureRecognizer(recognizer)
         
     }
+
+    
     
     @objc func onPan(_ recognizer: UIPanGestureRecognizer) {
        
@@ -56,10 +54,8 @@ class GalleryViewController: UIViewController {
         switch recognizer.state {
         case .began:
             mainImageView.transform = .identity
-            mainImageView.image = photos[currentIndex]
-                
+            mainImageView.image = images[currentIndex]
             secondaryImageView.transform = .identity
-                
             mainImageView.bringSubviewToFront(mainImageView)
             
             interactiveAnimator?.startAnimation()
@@ -76,13 +72,15 @@ class GalleryViewController: UIViewController {
         case .changed:
             var translation = recognizer.translation(in: view)
             
+            
             if translation.x < 0 && (!isLeftSwipe) && (!chooseFlag) {
-                if self.currentIndex == (photos.count - 1) {
+                if self.currentIndex == (images.count - 1) {
                     interactiveAnimator.stopAnimation(true)
                     return
                 }
                 chooseFlag = true
                 onChange(isLeft: true)
+                
                 
                 self.interactiveAnimator.stopAnimation(true)
                 self.interactiveAnimator.addAnimations { [weak self] in
@@ -155,7 +153,6 @@ class GalleryViewController: UIViewController {
                 interactiveAnimator.addCompletion({ [weak self] _ in
                     self?.mainImageView.transform = .identity
                     self?.secondaryImageView.transform = .identity
-                    self?.secondaryImageView.image = nil //
                 })
                 
                 interactiveAnimator.startAnimation()
@@ -168,15 +165,15 @@ class GalleryViewController: UIViewController {
     private func onChange(isLeft: Bool) {
         self.mainImageView.transform = .identity
         self.secondaryImageView.transform = .identity
-        self.mainImageView.image = photos[currentIndex]
+        self.mainImageView.image = images[currentIndex]
         
         if isLeft {
-            self.secondaryImageView.image = photos[self.currentIndex + 1]
+            self.secondaryImageView.image = images[self.currentIndex + 1]
             self.secondaryImageView.transform = CGAffineTransform(translationX: UIScreen.main.bounds.width, y: 0)
         }
         else {
             secondaryImageView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
-            secondaryImageView.image = photos[currentIndex - 1]
+            secondaryImageView.image = images[currentIndex - 1]
         }
     }
     
@@ -189,18 +186,18 @@ class GalleryViewController: UIViewController {
         else {
             currentIndex -= 1
         }
-        mainImageView.image = photos[currentIndex]
+        mainImageView.image = images[currentIndex]
         galleryView.bringSubviewToFront(mainImageView)
+        //self.customPageView.currentPage = self.currentIndex
     }
         
     func setImages(images: [UIImage]) {
-        self.photos = images
-        if self.photos.count > 0 {
+        self.images = images
+        if self.images.count > 0 {
             self.mainImageView.image = images.first
         }
+        //customPageView.numberOfPages = images.count
     }
-}
-
-
-
+    }
+    
 

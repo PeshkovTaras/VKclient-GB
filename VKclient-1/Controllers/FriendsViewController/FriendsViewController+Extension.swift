@@ -39,6 +39,6 @@ extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: fromFriendsToGallerySegue, sender: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row])
+       performSegue(withIdentifier: fromFriendsToGallerySegue, sender: arrayByLetter(sourceArray: friendsArray, letter: arrayOfLetter(sourceArray: friendsArray)[indexPath.section])[indexPath.row])
     }
 }

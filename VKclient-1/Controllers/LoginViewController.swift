@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapRecognizer.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapRecognizer)
         
         addShadow(view: loginTextField)
@@ -59,7 +60,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func pressButton(_ sender: UIButton) {
         
-        // performSegue(withIdentifier: "toMainView", sender: nil) // вход без авторизации
+      // performSegue(withIdentifier: "toMainView", sender: nil) // вход без авторизации
         
         if let userName = loginTextField.text,
            let userPassword = passwordTextField.text {

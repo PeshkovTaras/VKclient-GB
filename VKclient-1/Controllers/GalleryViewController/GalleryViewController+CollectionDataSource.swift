@@ -19,5 +19,11 @@ extension GalleryViewController: UICollectionViewDataSource {
         cell.configure(image: self.photos[indexPath.item])
         
         return cell
-    }    
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.mainImageView.image = photos[indexPath.item]
+        currentIndex = indexPath.item
+        secondaryImageView.image = nil
+    }
 }

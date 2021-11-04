@@ -24,6 +24,14 @@ class FriendsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapRecognizer.cancelsTouchesInView = false //чтобы другие тапы продолжали срабатывать
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func hideKeyboard (){
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

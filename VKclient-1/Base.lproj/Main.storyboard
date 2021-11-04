@@ -256,8 +256,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X49-jI-DtZ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X49-jI-DtZ">
+                                <rect key="frame" x="0.0" y="414" width="414" height="399"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fkB-Tz-fbM">
                                     <size key="itemSize" width="128" height="128"/>
@@ -276,24 +276,34 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akH-IM-fUs">
+                                <rect key="frame" x="0.0" y="88" width="414" height="326"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="akH-IM-fUs" secondAttribute="height" multiplier="207:163" id="zv3-cd-YWA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AlS-nk-zlM"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="akH-IM-fUs" firstAttribute="top" secondItem="AlS-nk-zlM" secondAttribute="top" id="4Tu-cQ-jYh"/>
                             <constraint firstItem="AlS-nk-zlM" firstAttribute="bottom" secondItem="X49-jI-DtZ" secondAttribute="bottom" id="6EM-Sk-ekZ"/>
+                            <constraint firstItem="akH-IM-fUs" firstAttribute="leading" secondItem="AlS-nk-zlM" secondAttribute="leading" id="8FY-PC-8Zz"/>
                             <constraint firstItem="AlS-nk-zlM" firstAttribute="trailing" secondItem="X49-jI-DtZ" secondAttribute="trailing" id="BSH-at-ZYb"/>
-                            <constraint firstItem="X49-jI-DtZ" firstAttribute="top" secondItem="AlS-nk-zlM" secondAttribute="top" id="Lc5-3Y-vp3"/>
+                            <constraint firstItem="X49-jI-DtZ" firstAttribute="top" secondItem="akH-IM-fUs" secondAttribute="bottom" id="Tft-J9-IbH"/>
+                            <constraint firstItem="akH-IM-fUs" firstAttribute="trailing" secondItem="AlS-nk-zlM" secondAttribute="trailing" id="ULZ-2I-Jko"/>
                             <constraint firstItem="X49-jI-DtZ" firstAttribute="leading" secondItem="AlS-nk-zlM" secondAttribute="leading" id="flS-qh-2e3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Галерея" id="L5W-YB-LpB"/>
                     <connections>
                         <outlet property="collectionView" destination="X49-jI-DtZ" id="xOv-cg-xuX"/>
+                        <outlet property="galleryView" destination="akH-IM-fUs" id="9GW-QE-IDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BS7-Xt-vr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3206" y="-810"/>
+            <point key="canvasLocation" x="3205.7971014492755" y="-810.26785714285711"/>
         </scene>
         <!--MainView-->
         <scene sceneID="BWO-jp-sLG">

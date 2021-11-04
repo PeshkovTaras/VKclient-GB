@@ -12,7 +12,7 @@ protocol LikeCounterProtocol: AnyObject {
     func likeCounterDecrement(counter: Int)
 }
 
-@IBDesignable class LikeCounterView: UIView {
+ class LikeCounterView: UIView {
     
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var likeCounterLabel: UILabel!

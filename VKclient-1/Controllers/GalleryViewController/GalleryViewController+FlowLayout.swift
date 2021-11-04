@@ -11,7 +11,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.bounds.width
-        let whiteSpace = CGFloat(2)
+        let whiteSpace = CGFloat(1)
         let lineCountCell = CGFloat(2)
         let cellWidth = collectionViewWidth/lineCountCell - whiteSpace
         
